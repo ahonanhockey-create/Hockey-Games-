@@ -1,33 +1,51 @@
-// Interactive Feature 1: Refresh Live Scores (Home Page)
-const refreshBtn = document.getElementById("refreshBtn");
-const refreshOutput = document.getElementById("refreshOutput");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL Central - Penalty Shootout Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-if (refreshBtn) {
-    refreshBtn.addEventListener("click", function() {
-        refreshOutput.textContent = "🔄 Scores updated live! Ice is freshly resurfaced.";
-        refreshOutput.style.color = "#90e0ef";
-        refreshOutput.style.fontWeight = "bold";
-    });
-}
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <a href="index.html">Schedule & Scores</a>
+        <a href="teams.html">Standings</a>
+        <a href="game.html" class="active">🏒 Penalty Shootout Game</a>
+    </nav>
 
-// Interactive Feature 2: Fan Predictor with if/else Logic (Fan Zone Page)
-const predictBtn = document.getElementById("predictBtn");
-const teamInput = document.getElementById("teamInput");
-const predictOutput = document.getElementById("predictOutput");
+    <header>
+        <h1>Interactive Penalty Shootout 🥅</h1>
+        <p>Take a shot against the AI goaltender! Can you score?</p>
+    </header>
 
-if (predictBtn) {
-    predictBtn.addEventListener("click", function() {
-        const team = teamInput.value.trim().toLowerCase();
+    <main class="container">
+        <div class="scoreboard">
+            <p>Score: <span id="goalScore">0</span> / <span id="totalShots">0</span></p>
+        </div>
 
-        if (team === "") {
-            predictOutput.textContent = "Please type a team name to get a prediction!";
-            predictOutput.style.color = "#ff6b6b";
-        } else if (team === "maple leafs" || team === "leafs") {
-            predictOutput.textContent = "The Toronto Maple Leafs are looking strong for an epic playoff run! 🍁🏒";
-            predictOutput.style.color = "#00b4d8";
-        } else {
-            predictOutput.textContent = `The ${teamInput.value} have a solid shot at lifting the Stanley Cup this season! 🏆`;
-            predictOutput.style.color = "#00b4d8";
-        }
-    });
-}
+        <div id="rink-view" style="font-size: 50px; margin: 20px;">
+            🏒 🥅
+        </div>
+
+        <p id="gameMessage" style="font-size: 18px; font-weight: bold; min-height: 30px;">Choose where to shoot!</p>
+
+        <div class="game-controls">
+            <button class="shot-btn" data-spot="left">Shoot Left ⬅️</button>
+            <button class="shot-btn" data-spot="center">Shoot Center ⬆️</button>
+            <button class="shot-btn" data-spot="right">Shoot Right ➡️</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button id="resetGameBtn" style="background-color: #ff6b6b;">Reset Game</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NHL Score Central. Built with Vibe Coding.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
