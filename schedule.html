@@ -3,32 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Central - Fan Zone</title>
+    <title>NHL Central - Standings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="index.html">Scores</a>
-        <a href="teams.html">Teams</a>
-        <a href="schedule.html" class="active">Fan Zone</a>
+        <a href="index.html">Schedule & Scores</a>
+        <a href="teams.html" class="active">Standings</a>
+        <a href="game.html">🏒 Penalty Shootout Game</a>
     </nav>
 
     <header>
-        <h1>NHL Fan Predictor 🔮</h1>
-        <p>Enter your favorite team to see their playoff outlook!</p>
+        <h1>League Standings 🏆</h1>
+        <p>Top contenders fighting for the Stanley Cup playoffs.</p>
     </header>
 
     <main class="container">
-        <h2>Team Prediction Generator</h2>
-        
-        <!-- User Input Requirement -->
-        <div class="form-group">
-            <input type="text" id="teamInput" placeholder="Enter your favorite team...">
-            <button id="predictBtn">Get Prediction</button>
+        <h2>Eastern Conference Leaders</h2>
+        <ul class="hobby-list">
+            <li>1. New York Rangers (105 pts)</li>
+            <li>2. Carolina Hurricanes (101 pts)</li>
+            <li>3. Florida Panthers (98 pts)</li>
+        </ul>
+
+        <h2>Western Conference Leaders</h2>
+        <ul class="hobby-list">
+            <li>1. Dallas Stars (108 pts)</li>
+            <li>2. Edmonton Oilers (103 pts)</li>
+            <li>3. Vancouver Canucks (100 pts)</li>
+        </ul>
+
+        <div class="image-box">
+            <img src="https://images.unsplash.com/photo-1515703736780-547120a1744b?w=500&auto=format&fit=crop&q=60" alt="Ice hockey rink">
         </div>
-        <p id="predictOutput"></p>
     </main>
 
     <footer>
