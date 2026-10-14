@@ -1,0 +1,33 @@
+// Interactive Feature 1: Refresh Live Scores (Home Page)
+const refreshBtn = document.getElementById("refreshBtn");
+const refreshOutput = document.getElementById("refreshOutput");
+
+if (refreshBtn) {
+    refreshBtn.addEventListener("click", function() {
+        refreshOutput.textContent = "🔄 Scores updated live! Ice is freshly resurfaced.";
+        refreshOutput.style.color = "#90e0ef";
+        refreshOutput.style.fontWeight = "bold";
+    });
+}
+
+// Interactive Feature 2: Fan Predictor with if/else Logic (Fan Zone Page)
+const predictBtn = document.getElementById("predictBtn");
+const teamInput = document.getElementById("teamInput");
+const predictOutput = document.getElementById("predictOutput");
+
+if (predictBtn) {
+    predictBtn.addEventListener("click", function() {
+        const team = teamInput.value.trim().toLowerCase();
+
+        if (team === "") {
+            predictOutput.textContent = "Please type a team name to get a prediction!";
+            predictOutput.style.color = "#ff6b6b";
+        } else if (team === "maple leafs" || team === "leafs") {
+            predictOutput.textContent = "The Toronto Maple Leafs are looking strong for an epic playoff run! 🍁🏒";
+            predictOutput.style.color = "#00b4d8";
+        } else {
+            predictOutput.textContent = `The ${teamInput.value} have a solid shot at lifting the Stanley Cup this season! 🏆`;
+            predictOutput.style.color = "#00b4d8";
+        }
+    });
+}
