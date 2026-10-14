@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d1b2a; /* Deep ice hockey navy */
+    color: #e0fbfc;
+    text-align: center;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #1b263b;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.navbar a {
+    color: #778da9;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    color: #ffffff;
+    background-color: #00b4d8; /* Ice blue highlight */
+}
+
+/* Containers */
+header {
+    padding: 40px 20px;
+}
+
+.container {
+    background: #1b263b;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    border: 1px solid #415a77;
+}
+
+/* Lists and Images */
+.hobby-list {
+    list-style-type: square;
+    text-align: left;
+    display: inline-block;
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.image-box img {
+    max-width: 100%;
+    border-radius: 6px;
+    margin-top: 15px;
+    border: 2px solid #00b4d8;
+}
+
+/* Inputs and Buttons */
+input, button {
+    padding: 10px;
+    font-size: 16px;
+    margin: 8px;
+    border-radius: 5px;
+    border: 1px solid #415a77;
+}
+
+input {
+    background-color: #0d1b2a;
+    color: white;
+    width: 60%;
+}
+
+button {
+    background-color: #00b4d8;
+    color: #0d1b2a;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #90e0ef;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    color: #778da9;
+    font-size: 14px;
+}
