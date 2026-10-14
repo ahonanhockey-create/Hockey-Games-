@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d1b2a; /* Deep ice hockey navy */
+    background-color: #0d1b2a;
     color: #e0fbfc;
     text-align: center;
 }
@@ -29,12 +29,12 @@ body {
 
 .navbar a:hover, .navbar a.active {
     color: #ffffff;
-    background-color: #00b4d8; /* Ice blue highlight */
+    background-color: #00b4d8;
 }
 
 /* Containers */
 header {
-    padding: 40px 20px;
+    padding: 30px 20px;
 }
 
 .container {
@@ -47,13 +47,43 @@ header {
     border: 1px solid #415a77;
 }
 
+.wide-container {
+    max-width: 850px;
+}
+
+/* Schedule Table */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    text-align: left;
+}
+
+.schedule-table th, .schedule-table td {
+    padding: 12px;
+    border-bottom: 1px solid #415a77;
+}
+
+.schedule-table th {
+    background-color: #0d1b2a;
+    color: #00b4d8;
+}
+
+.schedule-table tr:hover {
+    background-color: #24344d;
+}
+
 /* Lists and Images */
 .hobby-list {
-    list-style-type: square;
-    text-align: left;
-    display: inline-block;
+    list-style-type: none;
+    padding: 0;
     font-size: 18px;
     margin: 15px 0;
+}
+
+.hobby-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #415a77;
 }
 
 .image-box img {
@@ -63,22 +93,13 @@ header {
     border: 2px solid #00b4d8;
 }
 
-/* Inputs and Buttons */
-input, button {
-    padding: 10px;
+/* Buttons and Controls */
+button {
+    padding: 10px 16px;
     font-size: 16px;
     margin: 8px;
     border-radius: 5px;
     border: 1px solid #415a77;
-}
-
-input {
-    background-color: #0d1b2a;
-    color: white;
-    width: 60%;
-}
-
-button {
     background-color: #00b4d8;
     color: #0d1b2a;
     cursor: pointer;
@@ -88,6 +109,13 @@ button {
 
 button:hover {
     background-color: #90e0ef;
+}
+
+.scoreboard {
+    font-size: 24px;
+    font-weight: bold;
+    color: #90e0ef;
+    margin-bottom: 15px;
 }
 
 footer {
