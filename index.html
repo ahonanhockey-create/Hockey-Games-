@@ -3,30 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Central - Scores</title>
+    <title>NHL Central - Schedule & Scores</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation Menu (Required on every page) -->
+    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="index.html" class="active">Scores</a>
-        <a href="teams.html">Teams</a>
-        <a href="schedule.html">Fan Zone</a>
+        <a href="index.html" class="active">Schedule & Scores</a>
+        <a href="teams.html">Standings</a>
+        <a href="game.html">🏒 Penalty Shootout Game</a>
     </nav>
 
     <header>
-        <h1>🏒 NHL Score Central</h1>
-        <p>Your ultimate destination for live game updates and real-time stats.</p>
+        <h1>🏒 Next Week's NHL Schedule</h1>
+        <p>Full game line-ups and upcoming matchups across the league.</p>
     </header>
 
-    <main class="container">
-        <h2>Today's Featured Game</h2>
-        <p>Boston Bruins 3 vs. Toronto Maple Leafs 2 (3rd Period)</p>
+    <main class="container wide-container">
+        <h2>Upcoming Matchups (Oct 15 – Oct 21)</h2>
         
-        <!-- Interactive Feature 1 -->
-        <button id="refreshBtn">Refresh Live Scores</button>
-        <p id="refreshOutput"></p>
+        <table class="schedule-table">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Matchup</th>
+                    <th>Time (ET)</th>
+                    <th>Network</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monday</td>
+                    <td>Boston Bruins vs. Toronto Maple Leafs</td>
+                    <td>7:00 PM</td>
+                    <td>ESPN+</td>
+                </tr>
+                <tr>
+                    <td>Tuesday</td>
+                    <td>Edmonton Oilers vs. Vegas Golden Knights</td>
+                    <td>9:30 PM</td>
+                    <td>TNT</td>
+                </tr>
+                <tr>
+                    <td>Wednesday</td>
+                    <td>New York Rangers vs. New Jersey Devils</td>
+                    <td>7:30 PM</td>
+                    <td>Hulu</td>
+                </tr>
+                <tr>
+                    <td>Thursday</td>
+                    <td>Colorado Avalanche vs. Dallas Stars</td>
+                    <td>8:00 PM</td>
+                    <td>Sportsnet</td>
+                </tr>
+                <tr>
+                    <td>Friday</td>
+                    <td>Florida Panthers vs. Tampa Bay Lightning</td>
+                    <td>7:00 PM</td>
+                    <td>NHL Network</td>
+                </tr>
+                <tr>
+                    <td>Saturday</td>
+                    <td>Chicago Blackhawks vs. Detroit Red Wings</td>
+                    <td>1:00 PM</td>
+                    <td>ABC</td>
+                </tr>
+                <tr>
+                    <td>Sunday</td>
+                    <td>Vancouver Canucks vs. Seattle Kraken</td>
+                    <td>10:00 PM</td>
+                    <td>ESPN</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div style="margin-top: 20px;">
+            <button id="alertFilterBtn">Filter Canadian Teams Only</button>
+            <p id="filterOutput" style="margin-top: 10px; font-weight: bold;"></p>
+        </div>
     </main>
 
     <footer>
