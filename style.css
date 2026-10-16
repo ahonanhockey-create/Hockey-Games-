@@ -1,3 +1,4 @@
+/* Overall Page Theme */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -32,14 +33,14 @@ body {
     background-color: #00b4d8;
 }
 
-/* Containers */
+/* Header & Containers */
 header {
     padding: 30px 20px;
 }
 
 .container {
     background: #1b263b;
-    max-width: 600px;
+    max-width: 650px;
     margin: 20px auto;
     padding: 30px;
     border-radius: 8px;
@@ -51,12 +52,17 @@ header {
     max-width: 850px;
 }
 
-/* Schedule Table */
+.fantasy-section {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+/* Tables */
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 15px;
     text-align: left;
+    margin-top: 10px;
 }
 
 .schedule-table th, .schedule-table td {
@@ -73,33 +79,36 @@ header {
     background-color: #24344d;
 }
 
-/* Lists and Images */
+/* Lists */
 .hobby-list {
     list-style-type: none;
     padding: 0;
-    font-size: 18px;
+    font-size: 17px;
     margin: 15px 0;
 }
 
 .hobby-list li {
-    padding: 6px 0;
+    padding: 10px 0;
     border-bottom: 1px dashed #415a77;
+    text-align: left;
 }
 
-.image-box img {
-    max-width: 100%;
-    border-radius: 6px;
-    margin-top: 15px;
-    border: 2px solid #00b4d8;
-}
-
-/* Buttons and Controls */
-button {
-    padding: 10px 16px;
+/* Form Inputs & Buttons */
+input, button {
+    padding: 10px;
     font-size: 16px;
     margin: 8px;
     border-radius: 5px;
     border: 1px solid #415a77;
+}
+
+input {
+    background-color: #0d1b2a;
+    color: white;
+    width: 55%;
+}
+
+button {
     background-color: #00b4d8;
     color: #0d1b2a;
     cursor: pointer;
@@ -112,10 +121,9 @@ button:hover {
 }
 
 .scoreboard {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     color: #90e0ef;
-    margin-bottom: 15px;
 }
 
 footer {
