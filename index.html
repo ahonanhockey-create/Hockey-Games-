@@ -4,67 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Drink Breakdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation Menu (Appears on every page) -->
+    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="index.html" class="active">Drink Info</a>
-        <a href="drink-ratings.html">Drink Ratings</a>
-        <a href="foods.html">Food Info</a>
-        <a href="food-ratings.html">Food Ratings</a>
-        <a href="search.html">Search Tool</a>
+        <div class="nav-brand">NutriTrack</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Drink Info</a>
+            <a href="drink-ratings.html">Drink Ratings</a>
+            <a href="foods.html">Food Info</a>
+            <a href="food-ratings.html">Food Ratings</a>
+            <a href="search.html">Search Tool</a>
+        </div>
     </nav>
 
-    <header>
+    <header class="hero">
         <h1>🥤 Drink Breakdown & Health Alerts</h1>
         <p>Uncover hidden sugars, harmful additives, and nutrition facts in popular beverages.</p>
     </header>
 
     <main class="container wide-container">
-        <h2>Popular Drink Nutrition & Warning Guide</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Beverage</th>
-                    <th>Calories</th>
-                    <th>Sugar (g)</th>
-                    <th>Harmful / Defective Ingredients</th>
-                    <th>Health Warning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Classic Cola Soda</td>
-                    <td>140</td>
-                    <td>39g</td>
-                    <td>High Fructose Corn Syrup, Caramel Color (4-MEI)</td>
-                    <td><span class="warning">High Spike Risk: Excess sugar linked to insulin spikes.</span></td>
-                </tr>
-                <tr>
-                    <td>Energy Drink (Citrus)</td>
-                    <td>210</td>
-                    <td>54g</td>
-                    <td>Artificial Red 40, Excessive Synthetic Caffeine, Sodium Benzoate</td>
-                    <td><span class="warning">Heart Strain: Over-caffeinated with toxic dyes.</span></td>
-                </tr>
-                <tr>
-                    <td>Sweetened Iced Tea</td>
-                    <td>120</td>
-                    <td>32g</td>
-                    <td>High Fructose Corn Syrup, Citric Acid preservative</td>
-                    <td><span class="warning">Dental Erosion: High acidity & sugar damages enamel.</span></td>
-                </tr>
-                <tr>
-                    <td>Flavored Sparkling Water</td>
-                    <td>0</td>
-                    <td>0g</td>
-                    <td>Artificial Sweeteners (Sucralose, Acesulfame K)</td>
-                    <td><span class="caution">Gut Health: Synthetic sweeteners can alter gut bacteria.</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card">
+            <h2>Popular Drink Nutrition & Warning Guide</h2>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Beverage</th>
+                            <th>Calories</th>
+                            <th>Sugar</th>
+                            <th>Harmful / Defective Ingredients</th>
+                            <th>Health Warning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Classic Cola Soda</strong></td>
+                            <td>140 kcal</td>
+                            <td>39g</td>
+                            <td>High Fructose Corn Syrup, Caramel Color (4-MEI)</td>
+                            <td><span class="badge warning">High Spike Risk: Excess sugar linked to insulin spikes.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Energy Drink (Citrus)</strong></td>
+                            <td>210 kcal</td>
+                            <td>54g</td>
+                            <td>Artificial Red 40, Excessive Synthetic Caffeine, Sodium Benzoate</td>
+                            <td><span class="badge warning">Heart Strain: Over-caffeinated with toxic dyes.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sweetened Iced Tea</strong></td>
+                            <td>120 kcal</td>
+                            <td>32g</td>
+                            <td>High Fructose Corn Syrup, Citric Acid Preservative</td>
+                            <td><span class="badge warning">Dental Erosion: High acidity & sugar damages enamel.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Flavored Sparkling Water</strong></td>
+                            <td>0 kcal</td>
+                            <td>0g</td>
+                            <td>Artificial Sweeteners (Sucralose, Acesulfame K)</td>
+                            <td><span class="badge caution">Gut Health: Synthetic sweeteners can alter gut bacteria.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
 
     <footer>
