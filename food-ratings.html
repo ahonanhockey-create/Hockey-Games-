@@ -4,47 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Food Ratings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html">Drink Info</a>
-        <a href="drink-ratings.html">Drink Ratings</a>
-        <a href="foods.html">Food Info</a>
-        <a href="food-ratings.html" class="active">Food Ratings</a>
-        <a href="search.html">Search Tool</a>
+        <div class="nav-brand">NutriTrack</div>
+        <div class="nav-links">
+            <a href="index.html">Drink Info</a>
+            <a href="drink-ratings.html">Drink Ratings</a>
+            <a href="foods.html">Food Info</a>
+            <a href="food-ratings.html" class="active">Food Ratings</a>
+            <a href="search.html">Search Tool</a>
+        </div>
     </nav>
 
-    <header>
+    <header class="hero">
         <h1>⭐ Health Ratings: Foods</h1>
-        <p>Nutritional scoring for common foods ranked by health benefit.</p>
+        <p>Nutritional scoring for common foods ranked by overall health benefit.</p>
     </header>
 
     <main class="container">
-        <h2>Ranked Foods</h2>
-        <ul class="rating-list">
-            <li>
-                <strong>Fresh Organic Spinach 🥬</strong> — <span class="grade-green">Score: 10/10</span>
-                <p>Dense in micronutrients, vitamins A, C, K, and fiber.</p>
-            </li>
-            <li>
-                <strong>Wild Salmon 🐟</strong> — <span class="grade-green">Score: 9.5/10</span>
-                <p>Loaded with healthy omega-3 fatty acids and clean protein.</p>
-            </li>
-            <li>
-                <strong>Whole Oats & Berries 🥣</strong> — <span class="grade-green">Score: 8.5/10</span>
-                <p>High fiber content helps stabilize blood sugar throughout the day.</p>
-            </li>
-            <li>
-                <strong>Frozen Pizza 🍕</strong> — <span class="grade-red">Score: 3/10</span>
-                <p>Very high in saturated fats, refined flour, and artificial preservatives.</p>
-            </li>
-            <li>
-                <strong>Packaged Donuts 🍩</strong> — <span class="grade-red">Score: 1/10</span>
-                <p>High in trans fats, refined sugars, and zero nutritional value.</p>
-            </li>
-        </ul>
+        <div class="card">
+            <h2>Ranked Foods</h2>
+            <ul class="rating-list">
+                <li>
+                    <div class="rating-header">
+                        <strong>Fresh Organic Spinach 🥬</strong>
+                        <span class="badge grade-green">Score: 10/10</span>
+                    </div>
+                    <p>Dense in micronutrients, vitamins A, C, K, and essential dietary fiber.</p>
+                </li>
+                <li>
+                    <div class="rating-header">
+                        <strong>Wild Salmon 🐟</strong>
+                        <span class="badge grade-green">Score: 9.5/10</span>
+                    </div>
+                    <p>Loaded with healthy omega-3 fatty acids and clean protein.</p>
+                </li>
+                <li>
+                    <div class="rating-header">
+                        <strong>Whole Oats & Berries 🥣</strong>
+                        <span class="badge grade-green">Score: 8.5/10</span>
+                    </div>
+                    <p>High fiber content helps stabilize blood sugar throughout the day.</p>
+                </li>
+                <li>
+                    <div class="rating-header">
+                        <strong>Frozen Pizza 🍕</strong>
+                        <span class="badge grade-red">Score: 3/10</span>
+                    </div>
+                    <p>Very high in saturated fats, refined flour, and artificial preservatives.</p>
+                </li>
+                <li>
+                    <div class="rating-header">
+                        <strong>Packaged Donuts 🍩</strong>
+                        <span class="badge grade-red">Score: 1/10</span>
+                    </div>
+                    <p>High in trans fats, refined sugars, and zero nutritional value.</p>
+                </li>
+            </ul>
+        </div>
     </main>
 
     <footer>
