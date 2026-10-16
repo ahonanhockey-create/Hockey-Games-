@@ -4,66 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Food Breakdown</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html">Drink Info</a>
-        <a href="drink-ratings.html">Drink Ratings</a>
-        <a href="foods.html" class="active">Food Info</a>
-        <a href="food-ratings.html">Food Ratings</a>
-        <a href="search.html">Search Tool</a>
+        <div class="nav-brand">NutriTrack</div>
+        <div class="nav-links">
+            <a href="index.html">Drink Info</a>
+            <a href="drink-ratings.html">Drink Ratings</a>
+            <a href="foods.html" class="active">Food Info</a>
+            <a href="food-ratings.html">Food Ratings</a>
+            <a href="search.html">Search Tool</a>
+        </div>
     </nav>
 
-    <header>
+    <header class="hero">
         <h1>🍿 Food Breakdown & Health Alerts</h1>
         <p>Exposing harmful additives, hidden sugars, and preservatives in common foods.</p>
     </header>
 
     <main class="container wide-container">
-        <h2>Popular Food Nutrition & Warning Guide</h2>
-        <table class="data-table">
-            <thead>
-                <tr>
-                    <th>Food Item</th>
-                    <th>Calories</th>
-                    <th>Sugar (g)</th>
-                    <th>Harmful / Defective Ingredients</th>
-                    <th>Health Warning</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Ultra-Processed Potato Chips</td>
-                    <td>160 (per oz)</td>
-                    <td>1g</td>
-                    <td>Hydrogenated Oils, TBHQ, Yellow 6 Dye</td>
-                    <td><span class="warning">High Trans Fats: Linked to arterial inflammation.</span></td>
-                </tr>
-                <tr>
-                    <td>Sugary Breakfast Cereal</td>
-                    <td>210</td>
-                    <td>18g</td>
-                    <td>BHT Preservative, Red 40, High Fructose Corn Syrup</td>
-                    <td><span class="warning">Sugar Crash: Artificial preservatives & high glycemic load.</span></td>
-                </tr>
-                <tr>
-                    <td>Processed Fast-Food Burger</td>
-                    <td>540</td>
-                    <td>9g</td>
-                    <td>Sodium Nitrates, Ammonium Sulfate, High Sodium (1,050mg)</td>
-                    <td><span class="warning">Sodium Overload: Increases risk of high blood pressure.</span></td>
-                </tr>
-                <tr>
-                    <td>Organic Dried Fruit</td>
-                    <td>130</td>
-                    <td>26g</td>
-                    <td>Sulfur Dioxide (Preservative)</td>
-                    <td><span class="caution">Sugar Density: Concentrated natural sugars, watch portions.</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="card">
+            <h2>Popular Food Nutrition & Warning Guide</h2>
+            <div class="table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Food Item</th>
+                            <th>Calories</th>
+                            <th>Sugar</th>
+                            <th>Harmful / Defective Ingredients</th>
+                            <th>Health Warning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Processed Potato Chips</strong></td>
+                            <td>160 kcal</td>
+                            <td>1g</td>
+                            <td>Hydrogenated Oils, TBHQ Preservative, Yellow 6 Dye</td>
+                            <td><span class="badge warning">High Trans Fats: Linked to arterial inflammation.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sugary Breakfast Cereal</strong></td>
+                            <td>210 kcal</td>
+                            <td>18g</td>
+                            <td>BHT Preservative, Red 40, High Fructose Corn Syrup</td>
+                            <td><span class="badge warning">Sugar Crash: Artificial dyes & high glycemic load.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fast-Food Burger</strong></td>
+                            <td>540 kcal</td>
+                            <td>9g</td>
+                            <td>Sodium Nitrates, Ammonium Sulfate, High Sodium (1,050mg)</td>
+                            <td><span class="badge warning">Sodium Overload: Increases risk of high blood pressure.</span></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Organic Dried Fruit</strong></td>
+                            <td>130 kcal</td>
+                            <td>26g</td>
+                            <td>Sulfur Dioxide Preservative</td>
+                            <td><span class="badge caution">Sugar Density: Concentrated sugars, watch portions.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </main>
 
     <footer>
