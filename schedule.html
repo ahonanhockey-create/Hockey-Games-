@@ -3,45 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Central - Standings</title>
+    <title>Fantasy Hockey Hub - Players & Standings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="index.html">Schedule & Scores</a>
-        <a href="teams.html" class="active">Standings</a>
-        <a href="game.html">🏒 Penalty Shootout Game</a>
+        <a href="index.html">Dashboard</a>
+        <a href="teams.html" class="active">Players & Standings</a>
+        <a href="game.html">⚡ Lineup Optimizer</a>
     </nav>
 
     <header>
-        <h1>League Standings 🏆</h1>
-        <p>Top contenders fighting for the Stanley Cup playoffs.</p>
+        <h1>📊 League Standings & Player Profiles</h1>
+        <p>Track your fantasy matchup wins and research upcoming player schedules.</p>
+    </header>
+
+    <main class="container wide-container">
+        <!-- League Standings / Games Won -->
+        <section class="fantasy-section">
+            <h2>🏆 Fantasy League Standings (Games Won)</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Manager / Team Name</th>
+                        <th>Record (W - L - T)</th>
+                        <th>Fantasy Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Aiden's Apex Snipers</td>
+                        <td>12 - 2 - 0</td>
+                        <td>1,840 pts</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Ice Cold Dekes</td>
+                        <td>10 - 4 - 0</td>
+                        <td>1,720 pts</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Zamboni Riders</td>
+                        <td>9 - 5 - 0</td>
+                        <td>1,655 pts</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Upcoming Schedule -->
+        <section class="fantasy-section" style="margin-top: 30px;">
+            <h2>📅 This Week's NHL Schedule (Matchup Planner)</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Key Game</th>
+                        <th>Fantasy Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>Edmonton vs. Toronto</td>
+                        <td>Heavy star-power night (Start all forwards)</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>Colorado vs. Dallas</td>
+                        <td>Elite offensive showdown</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>NY Rangers vs. Carolina</td>
+                        <td>Tight defensive battle (Watch goalie starts)</td>
+                    </tr>
+                </tbody>
+            </table>
+Here is your complete, ready-to-copy-paste **Fantasy Hockey Manager App** website! 
+
+This version transforms your 5-file project into a dedicated fantasy hockey dashboard that features lineup starter recommendations, hot streak trackers, player profiles, weekly schedules, and your fantasy matchup record (games won).
+
+Save these 5 files directly inside your project folder:
+
+---
+
+### File 1: `index.html` (Fantasy Hub - Lineup & Hot Streaks)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Puck - Lineup & Hot Streaks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <a href="index.html" class="active">Fantasy Hub</a>
+        <a href="players.html">Player Info</a>
+        <a href="schedule.html">Schedule & Record</a>
+    </nav>
+
+    <header>
+        <h1>⚡ Fantasy Puck Hub</h1>
+        <p>Optimize your roster, check who's hot, and crush your fantasy matchup this week.</p>
     </header>
 
     <main class="container">
-        <h2>Eastern Conference Leaders</h2>
+        <h2>🔥 Who to Start Tonight</h2>
+        <p>Make sure these high-value players are locked into your starting lineup:</p>
+        
         <ul class="hobby-list">
-            <li>1. New York Rangers (105 pts)</li>
-            <li>2. Carolina Hurricanes (101 pts)</li>
-            <li>3. Florida Panthers (98 pts)</li>
+            <li><strong>Connor McDavid (C)</strong> - Facing a favorable home matchup; massive point upside.</li>
+            <li><strong>Cale Makar (D)</strong> - On a 4-game point streak with heavy power-play time.</li>
+            <li><strong>Connor Hellebuyck (G)</strong> - Confirmed starter against a low-scoring offense.</li>
         </ul>
 
-        <h2>Western Conference Leaders</h2>
-        <ul class="hobby-list">
-            <li>1. Dallas Stars (108 pts)</li>
-            <li>2. Edmonton Oilers (103 pts)</li>
-            <li>3. Vancouver Canucks (100 pts)</li>
-        </ul>
-
-        <div class="image-box">
-            <img src="https://images.unsplash.com/photo-1515703736780-547120a1744b?w=500&auto=format&fit=crop&q=60" alt="Ice hockey rink">
+        <div style="margin-top: 25px;">
+            <h3>Hot Streak Tracker</h3>
+            <p id="hotStreakStatus">Click below to check today's hottest waiver wire pickup.</p>
+            <button id="streakBtn">Reveal Hot Waiver Pick</button>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 NHL Score Central. Built with Vibe Coding.</p>
+        <p>&copy; 2026 Fantasy Puck App. Built with Vibe Coding.</p>
     </footer>
 
     <script src="script.js"></script>
