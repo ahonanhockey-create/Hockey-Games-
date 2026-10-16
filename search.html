@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTrack - Search Engine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html">Drink Info</a>
+        <a href="drink-ratings.html">Drink Ratings</a>
+        <a href="foods.html">Food Info</a>
+        <a href="food-ratings.html">Food Ratings</a>
+        <a href="search.html" class="active">Search Tool</a>
+    </nav>
+
+    <header>
+        <h1>🔍 Food & Drink Lookup Engine</h1>
+        <p>Type any food or beverage to view calories, sugar, ingredients, and health score!</p>
+    </header>
+
+    <main class="container">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Try 'Soda', 'Apple', 'Chips', or 'Water'...">
+            <button id="searchBtn">Inspect Item</button>
+        </div>
+
+        <div id="searchResult" class="result-card" style="display: none; margin-top: 20px;">
+            <h2 id="resName"></h2>
+            <p><strong>Calories:</strong> <span id="resCalories"></span></p>
+            <p><strong>Sugar Content:</strong> <span id="resSugar"></span></p>
+            <p><strong>Key Ingredients:</strong> <span id="resIngredients"></span></p>
+            <p><strong>Health Rating:</strong> <span id="resRating" style="font-weight: bold;"></span></p>
+            <p><strong>Verdict / Warning:</strong> <span id="resVerdict"></span></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 NutriTrack Food & Drink Intelligence. Built with Vibe Coding.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
