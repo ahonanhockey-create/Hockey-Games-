@@ -3,89 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Central - Schedule & Scores</title>
+    <title>Fantasy Hockey Hub - Dashboard</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation Menu -->
+    <!-- Navigation Menu (Required on every page) -->
     <nav class="navbar">
-        <a href="index.html" class="active">Schedule & Scores</a>
-        <a href="teams.html">Standings</a>
-        <a href="game.html">🏒 Penalty Shootout Game</a>
+        <a href="index.html" class="active">Dashboard</a>
+        <a href="teams.html">Players & Standings</a>
+        <a href="game.html">⚡ Lineup Optimizer</a>
     </nav>
 
     <header>
-        <h1>🏒 Next Week's NHL Schedule</h1>
-        <p>Full game line-ups and upcoming matchups across the league.</p>
+        <h1>🏒 Fantasy Hockey Manager Hub</h1>
+        <p>Your daily edge for setting winning lineups and tracking hot players.</p>
     </header>
 
     <main class="container wide-container">
-        <h2>Upcoming Matchups (Oct 15 – Oct 21)</h2>
-        
-        <table class="schedule-table">
-            <thead>
-                <tr>
-                    <th>Day</th>
-                    <th>Matchup</th>
-                    <th>Time (ET)</th>
-                    <th>Network</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Monday</td>
-                    <td>Boston Bruins vs. Toronto Maple Leafs</td>
-                    <td>7:00 PM</td>
-                    <td>ESPN+</td>
-                </tr>
-                <tr>
-                    <td>Tuesday</td>
-                    <td>Edmonton Oilers vs. Vegas Golden Knights</td>
-                    <td>9:30 PM</td>
-                    <td>TNT</td>
-                </tr>
-                <tr>
-                    <td>Wednesday</td>
-                    <td>New York Rangers vs. New Jersey Devils</td>
-                    <td>7:30 PM</td>
-                    <td>Hulu</td>
-                </tr>
-                <tr>
-                    <td>Thursday</td>
-                    <td>Colorado Avalanche vs. Dallas Stars</td>
-                    <td>8:00 PM</td>
-                    <td>Sportsnet</td>
-                </tr>
-                <tr>
-                    <td>Friday</td>
-                    <td>Florida Panthers vs. Tampa Bay Lightning</td>
-                    <td>7:00 PM</td>
-                    <td>NHL Network</td>
-                </tr>
-                <tr>
-                    <td>Saturday</td>
-                    <td>Chicago Blackhawks vs. Detroit Red Wings</td>
-                    <td>1:00 PM</td>
-                    <td>ABC</td>
-                </tr>
-                <tr>
-                    <td>Sunday</td>
-                    <td>Vancouver Canucks vs. Seattle Kraken</td>
-                    <td>10:00 PM</td>
-                    <td>ESPN</td>
-                </tr>
-            </tbody>
-        </table>
+        <!-- Hot Streaks Section -->
+        <section class="fantasy-section">
+            <h2>🔥 Current Hot Streaks (Must-Start)</h2>
+            <ul class="hobby-list">
+                <li><strong>Connor McDavid (EDM - C):</strong> 7 goals & 9 assists in his last 5 games. Absolute lock.</li>
+                <li><strong>Nathan MacKinnon (COL - C):</strong> Riding a 6-game point streak with 18 total shots.</li>
+                <li><strong>Connor Hellebuyck (WPG - G):</strong> Won 4 straight starts with a .945 save percentage.</li>
+            </ul>
+        </section>
 
-        <div style="margin-top: 20px;">
-            <button id="alertFilterBtn">Filter Canadian Teams Only</button>
-            <p id="filterOutput" style="margin-top: 10px; font-weight: bold;"></p>
+        <!-- Start 'Em / Sit 'Em Section -->
+        <section class="fantasy-section">
+            <h2>📋 Start 'Em / Sit 'Em Advice for Tonight</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Position</th>
+                        <th>Recommendation</th>
+                        <th>Reasoning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Auston Matthews</td>
+                        <td>Center</td>
+                        <td><span style="color: #00b4d8; font-weight: bold;">START 'EM</span></td>
+                        <td>Facing a backup goaltender with leaky defense.</td>
+                    </tr>
+                    <tr>
+                        <td>Igor Shesterkin</td>
+                        <td>Goalie</td>
+                        <td><span style="color: #00b4d8; font-weight: bold;">START 'EM</span></td>
+                        <td>Playing at home against a low-scoring offense.</td>
+                    </tr>
+                    <tr>
+                        <td>Miro Heiskanen</td>
+                        <td>Defense</td>
+                        <td><span style="color: #ff6b6b; font-weight: bold;">SIT 'EM</span></td>
+                        <td>Carrying a minor injury designation; limited power-play time expected.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Interactive Feature 1 -->
+        <div style="margin-top: 25px;">
+            <button id="tipBtn">Generate Daily Expert Tip</button>
+            <p id="tipOutput" style="margin-top: 10px; font-weight: bold;"></p>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 NHL Score Central. Built with Vibe Coding.</p>
+        <p>&copy; 2026 Fantasy Hockey Hub. Built with Vibe Coding.</p>
     </footer>
 
     <script src="script.js"></script>
