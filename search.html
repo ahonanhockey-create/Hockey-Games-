@@ -4,36 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Search Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <a href="index.html">Drink Info</a>
-        <a href="drink-ratings.html">Drink Ratings</a>
-        <a href="foods.html">Food Info</a>
-        <a href="food-ratings.html">Food Ratings</a>
-        <a href="search.html" class="active">Search Tool</a>
+        <div class="nav-brand">NutriTrack</div>
+        <div class="nav-links">
+            <a href="index.html">Drink Info</a>
+            <a href="drink-ratings.html">Drink Ratings</a>
+            <a href="foods.html">Food Info</a>
+            <a href="food-ratings.html">Food Ratings</a>
+            <a href="search.html" class="active">Search Tool</a>
+        </div>
     </nav>
 
-    <header>
+    <header class="hero">
         <h1>🔍 Food & Drink Lookup Engine</h1>
-        <p>Type any food or beverage to view calories, sugar, ingredients, and health score!</p>
+        <p>Search any item to inspect calories, sugar content, additives, and health rating!</p>
     </header>
 
     <main class="container">
-        <div class="search-box">
-            <input type="text" id="searchInput" placeholder="Try 'Soda', 'Apple', 'Chips', or 'Water'...">
-            <button id="searchBtn">Inspect Item</button>
-        </div>
+        <div class="card">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Try 'soda', 'apple', 'chips', 'water', or 'pizza'...">
+                <button id="searchBtn">Inspect Item</button>
+            </div>
 
-        <div id="searchResult" class="result-card" style="display: none; margin-top: 20px;">
-            <h2 id="resName"></h2>
-            <p><strong>Calories:</strong> <span id="resCalories"></span></p>
-            <p><strong>Sugar Content:</strong> <span id="resSugar"></span></p>
-            <p><strong>Key Ingredients:</strong> <span id="resIngredients"></span></p>
-            <p><strong>Health Rating:</strong> <span id="resRating" style="font-weight: bold;"></span></p>
-            <p><strong>Verdict / Warning:</strong> <span id="resVerdict"></span></p>
+            <!-- Quick Suggestions -->
+            <div class="quick-tags">
+                <span>Quick Search:</span>
+                <button class="tag-btn" data-query="soda">Soda</button>
+                <button class="tag-btn" data-query="apple">Apple</button>
+                <button class="tag-btn" data-query="chips">Chips</button>
+                <button class="tag-btn" data-query="water">Water</button>
+            </div>
+
+            <div id="searchResult" class="result-card hidden">
+                <h2 id="resName"></h2>
+                <div class="res-grid">
+                    <div class="res-item">
+                        <span class="res-label">Calories:</span>
+                        <span id="resCalories" class="res-val"></span>
+                    </div>
+                    <div class="res-item">
+                        <span class="res-label">Sugar Content:</span>
+                        <span id="resSugar" class="res-val"></span>
+                    </div>
+                    <div class="res-item">
+                        <span class="res-label">Health Rating:</span>
+                        <span id="resRating" class="res-val highlight"></span>
+                    </div>
+                </div>
+                <div class="res-full">
+                    <span class="res-label">Key Ingredients:</span>
+                    <p id="resIngredients"></p>
+                </div>
+                <div class="res-full">
+                    <span class="res-label">Verdict / Warning:</span>
+                    <p id="resVerdict"></p>
+                </div>
+            </div>
         </div>
     </main>
 
