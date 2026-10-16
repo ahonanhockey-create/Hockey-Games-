@@ -1,59 +1,75 @@
-// Feature 1: Schedule Filter (Home Page)
-const alertFilterBtn = document.getElementById("alertFilterBtn");
-const filterOutput = document.getElementById("filterOutput");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fantasy Puck - Players & Standings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-if (alertFilterBtn) {
-    alertFilterBtn.addEventListener("click", function() {
-        filterOutput.textContent = "🇨🇦 Displaying Canadian matchups: Bruins vs. Leafs, Oilers vs. Knights, Canucks vs. Kraken!";
-        filterOutput.style.color = "#90e0ef";
-    });
-}
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <a href="index.html">Dashboard</a>
+        <a href="team.html" class="active">Players & Standings</a>
+        <a href="schedule.html">Schedule & Record</a>
+    </nav>
 
-// Feature 2: Penalty Shootout Mini-Game Logic (Game Page)
-const shotButtons = document.querySelectorAll(".shot-btn");
-const goalScoreDisplay = document.getElementById("goalScore");
-const totalShotsDisplay = document.getElementById("totalShots");
-const gameMessage = document.getElementById("gameMessage");
-const resetGameBtn = document.getElementById("resetGameBtn");
+    <header>
+        <h1>📋 Player Information & Stats</h1>
+        <p>Deep-dive into player updates, injuries, and fantasy value.</p>
+    </header>
 
-let goals = 0;
-let shots = 0;
+    <main class="container wide-container">
+        <h2>Player Database Search</h2>
+        
+        <!-- User Input Feature -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <input type="text" id="playerSearchInput" placeholder="Search player name (e.g., Matthews, Panarin)...">
+            <button id="searchPlayerBtn">Look Up Player</button>
+        </div>
+        <p id="playerSearchOutput" style="font-weight: bold; color: #90e0ef;"></p>
 
-if (shotButtons.length > 0) {
-    shotButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const playerChoice = button.getAttribute("data-spot");
-            
-            // Goalie AI picks a random spot: left, center, or right
-            const spots = ["left", "center", "right"];
-            const goalieChoice = spots[Math.floor(Math.random() * spots.length)];
+        <table class="schedule-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Status</th>
+                    <th>Proj. Fantasy Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Auston Matthews</td>
+                    <td>Center</td>
+                    <td>TOR</td>
+                    <td>Active 🟢</td>
+                    <td>24.5</td>
+                </tr>
+                <tr>
+                    <td>Nathan MacKinnon</td>
+                    <td>Center</td>
+                    <td>COL</td>
+                    <td>Active 🟢</td>
+                    <td>27.0</td>
+                </tr>
+                <tr>
+                    <td>Igor Shesterkin</td>
+                    <td>Goalie</td>
+                    <td>NYR</td>
+                    <td>Confirmed 🟢</td>
+                    <td>21.0</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
 
-            shots++;
+    <footer>
+        <p>&copy; 2026 Fantasy Puck App. Built with Vibe Coding.</p>
+    </footer>
 
-            if (playerChoice === goalieChoice) {
-                // Goalie blocked it!
-                gameMessage.textContent = `🛑 SAVED! The goalie guessed ${goalieChoice} too!`;
-                gameMessage.style.color = "#ff6b6b";
-            } else {
-                // GOAL!
-                goals++;
-                gameMessage.textContent = `🚨 GOAL!! You shot ${playerChoice} and the goalie went ${goalieChoice}!`;
-                gameMessage.style.color = "#00b4d8";
-            }
-
-            // Update scoreboard
-            goalScoreDisplay.textContent = goals;
-            totalShotsDisplay.textContent = shots;
-        });
-    });
-
-    // Reset Game Button
-    resetGameBtn.addEventListener("click", function() {
-        goals = 0;
-        shots = 0;
-        goalScoreDisplay.textContent = goals;
-        totalShotsDisplay.textContent = shots;
-        gameMessage.textContent = "Game reset! Choose where to shoot!";
-        gameMessage.style.color = "#e0fbfc";
-    });
-}
+    <script src="script.js"></script>
+</body>
+</html>
