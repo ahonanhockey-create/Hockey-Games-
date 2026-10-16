@@ -1,62 +1,73 @@
-// =========================================================
-// Feature 1: Hot Streak Waiver Wire Advisor (index.html)
-// =========================================================
-const streakBtn = document.getElementById("streakBtn");
-const hotStreakStatus = document.getElementById("hotStreakStatus");
-
-const waiverPicks = [
-    "🔥 Sam Reinhart (F) - On fire with goals in consecutive games! High power-play usage.",
-    "🔥 Seth Jarvis (F) - Logging big minutes and racking up assists.",
-    "🔥 Lukas Dostal (G) - Stealing starts and putting up high save percentage numbers."
+// Database for Page 5 Food & Drink Search
+const database = [
+    {
+        name: "soda",
+        type: "Drink",
+        calories: "140 kcal",
+        sugar: "39 grams",
+        ingredients: "Carbonated Water, High Fructose Corn Syrup, Caramel Color, Phosphoric Acid",
+        rating: "2/10 (Unhealthy)",
+        verdict: "High fructose corn syrup causes sudden insulin spikes and metabolic stress."
+    },
+    {
+        name: "water",
+        type: "Drink",
+        calories: "0 kcal",
+        sugar: "0 grams",
+        ingredients: "Purified Water, Natural Minerals",
+        rating: "10/10 (Optimal)",
+        verdict: "Essential for human cellular function and optimal hydration."
+    },
+    {
+        name: "chips",
+        type: "Food",
+        calories: "160 kcal per serving",
+        sugar: "1 gram",
+        ingredients: "Potatoes, Vegetable Oil, TBHQ Preservative, Excessive Salt",
+        rating: "3/10 (Unhealthy)",
+        verdict: "High in inflammatory fried oils and sodium."
+    },
+    {
+        name: "apple",
+        type: "Food",
+        calories: "95 kcal",
+        sugar: "19 grams (Natural)",
+        ingredients: "Raw Apple, Dietary Fiber, Vitamin C, Polyphenols",
+        rating: "9.5/10 (Superfood)",
+        verdict: "Natural fiber slows down sugar absorption, promoting digestive health."
+    }
 ];
 
-if (streakBtn) {
-    streakBtn.addEventListener("click", function() {
-        const randomIndex = Math.floor(Math.random() * waiverPicks.length);
-        hotStreakStatus.textContent = waiverPicks[randomIndex];
-        hotStreakStatus.style.color = "#90e0ef";
-        hotStreakStatus.style.fontWeight = "bold";
-    });
-}
+const searchBtn = document.getElementById("searchBtn");
+const searchInput = document.getElementById("searchInput");
+const searchResult = document.getElementById("searchResult");
 
-// =========================================================
-// Feature 2: Player Database Search & Info Lookup (teams.html)
-// =========================================================
-const searchPlayerBtn = document.getElementById("searchPlayerBtn");
-const playerSearchInput = document.getElementById("playerSearchInput");
-const playerSearchOutput = document.getElementById("playerSearchOutput");
-
-if (searchPlayerBtn) {
-    searchPlayerBtn.addEventListener("click", function() {
-        const query = playerSearchInput.value.trim();
-
-        if (query === "") {
-            playerSearchOutput.textContent = "Please type a player name to search.";
-            playerSearchOutput.style.color = "#ff6b6b";
-        } else {
-            playerSearchOutput.textContent = `✅ Player Profile Found for "${query}": Active Tier-1 Starter | High projected fantasy point ceiling this week!`;
-            playerSearchOutput.style.color = "#00b4d8";
-        }
-    });
-}
-
-// =========================================================
-// Feature 3: Matchup Win Simulator & Record Counter (schedule.html)
-// =========================================================
-const simulateWinBtn = document.getElementById("simulateWinBtn");
-const winsCount = document.getElementById("winsCount");
-let currentWins = 14;
-
-if (simulateWinBtn) {
-    simulateWinBtn.addEventListener("click", function() {
-        currentWins++;
-        winsCount.textContent = currentWins;
-        simulateWinBtn.textContent = "Win Recorded! 🎉";
-        simulateWinBtn.style.backgroundColor = "#28a745";
+if (searchBtn) {
+    searchBtn.addEventListener("click", function() {
+        const query = searchInput.value.trim().toLowerCase();
         
-        setTimeout(() => {
-            simulateWinBtn.textContent = "Simulate Next Win! 🎉";
-            simulateWinBtn.style.backgroundColor = "#00b4d8";
-        }, 1500);
+        // Find matching item in database
+        const match = database.find(item => item.name === query);
+
+        if (match) {
+            document.getElementById("resName").textContent = `${match.name.toUpperCase()} (${match.type})`;
+            document.getElementById("resCalories").textContent = match.calories;
+            document.getElementById("resSugar").textContent = match.sugar;
+            document.getElementById("resIngredients").textContent = match.ingredients;
+            document.getElementById("resRating").textContent = match.rating;
+            document.getElementById("resVerdict").textContent = match.verdict;
+            searchResult.style.display = "block";
+        } else if (query === "") {
+            alert("Please type a food or drink item to search!");
+        } else {
+            // General response for unlisted items using conditional logic
+            document.getElementById("resName").textContent = query.toUpperCase();
+            document.getElementById("resCalories").textContent = "Approx. 150-250 kcal";
+            document.getElementById("resSugar").textContent = "Varies based on brand";
+            document.getElementById("resIngredients").textContent = "Standard commercial processing ingredients";
+            document.getElementById("resRating").textContent = "5/10 (Moderate)";
+            document.getElementById("resVerdict").textContent = "Check packaging labels for artificial dyes and added sugars.";
+            searchResult.style.display = "block";
+        }
     });
 }
