@@ -3,71 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Puck - Players & Standings</title>
+    <title>NutriTrack - Drink Breakdown</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation Menu -->
+    <!-- Navigation Menu (Appears on every page) -->
     <nav class="navbar">
-        <a href="index.html">Dashboard</a>
-        <a href="teams.html" class="active">Players & Standings</a>
-        <a href="schedule.html">Schedule & Record</a>
+        <a href="index.html" class="active">Drink Info</a>
+        <a href="drink-ratings.html">Drink Ratings</a>
+        <a href="foods.html">Food Info</a>
+        <a href="food-ratings.html">Food Ratings</a>
+        <a href="search.html">Search Tool</a>
     </nav>
 
     <header>
-        <h1>📋 Player Information & Stats</h1>
-        <p>Deep-dive into player updates, injuries, and fantasy value.</p>
+        <h1>🥤 Drink Breakdown & Health Alerts</h1>
+        <p>Uncover hidden sugars, harmful additives, and nutrition facts in popular beverages.</p>
     </header>
 
     <main class="container wide-container">
-        <h2>Player Database Search</h2>
-        
-        <!-- User Input Feature -->
-        <div class="form-group" style="margin-bottom: 20px;">
-            <input type="text" id="playerSearchInput" placeholder="Search player name (e.g., Matthews, Panarin)...">
-            <button id="searchPlayerBtn">Look Up Player</button>
-        </div>
-        <p id="playerSearchOutput" style="font-weight: bold; color: #90e0ef;"></p>
-
-        <table class="schedule-table" style="margin-top: 20px;">
+        <h2>Popular Drink Nutrition & Warning Guide</h2>
+        <table class="data-table">
             <thead>
                 <tr>
-                    <th>Player</th>
-                    <th>Position</th>
-                    <th>Team</th>
-                    <th>Status</th>
-                    <th>Proj. Fantasy Pts</th>
+                    <th>Beverage</th>
+                    <th>Calories</th>
+                    <th>Sugar (g)</th>
+                    <th>Harmful / Defective Ingredients</th>
+                    <th>Health Warning</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Auston Matthews</td>
-                    <td>Center</td>
-                    <td>TOR</td>
-                    <td>Active 🟢</td>
-                    <td>24.5</td>
+                    <td>Classic Cola Soda</td>
+                    <td>140</td>
+                    <td>39g</td>
+                    <td>High Fructose Corn Syrup, Caramel Color (4-MEI)</td>
+                    <td><span class="warning">High Spike Risk: Excess sugar linked to insulin spikes.</span></td>
                 </tr>
                 <tr>
-                    <td>Nathan MacKinnon</td>
-                    <td>Center</td>
-                    <td>COL</td>
-                    <td>Active 🟢</td>
-                    <td>27.0</td>
+                    <td>Energy Drink (Citrus)</td>
+                    <td>210</td>
+                    <td>54g</td>
+                    <td>Artificial Red 40, Excessive Synthetic Caffeine, Sodium Benzoate</td>
+                    <td><span class="warning">Heart Strain: Over-caffeinated with toxic dyes.</span></td>
                 </tr>
                 <tr>
-                    <td>Igor Shesterkin</td>
-                    <td>Goalie</td>
-                    <td>NYR</td>
-                    <td>Confirmed 🟢</td>
-                    <td>21.0</td>
+                    <td>Sweetened Iced Tea</td>
+                    <td>120</td>
+                    <td>32g</td>
+                    <td>High Fructose Corn Syrup, Citric Acid preservative</td>
+                    <td><span class="warning">Dental Erosion: High acidity & sugar damages enamel.</span></td>
+                </tr>
+                <tr>
+                    <td>Flavored Sparkling Water</td>
+                    <td>0</td>
+                    <td>0g</td>
+                    <td>Artificial Sweeteners (Sucralose, Acesulfame K)</td>
+                    <td><span class="caution">Gut Health: Synthetic sweeteners can alter gut bacteria.</span></td>
                 </tr>
             </tbody>
         </table>
     </main>
 
     <footer>
-        <p>&copy; 2026 Fantasy Puck App. Built with Vibe Coding.</p>
+        <p>&copy; 2026 NutriTrack Food & Drink Intelligence. Built with Vibe Coding.</p>
     </footer>
 
     <script src="script.js"></script>
