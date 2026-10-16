@@ -1,11 +1,11 @@
-// Database for Page 5 Food & Drink Search
+// Food & Beverage Search Engine Database
 const database = [
     {
         name: "soda",
         type: "Drink",
         calories: "140 kcal",
         sugar: "39 grams",
-        ingredients: "Carbonated Water, High Fructose Corn Syrup, Caramel Color, Phosphoric Acid",
+        ingredients: "Carbonated Water, High Fructose Corn Syrup, Caramel Color, Phosphoric Acid, Caffeine",
         rating: "2/10 (Unhealthy)",
         verdict: "High fructose corn syrup causes sudden insulin spikes and metabolic stress."
     },
@@ -14,18 +14,18 @@ const database = [
         type: "Drink",
         calories: "0 kcal",
         sugar: "0 grams",
-        ingredients: "Purified Water, Natural Minerals",
+        ingredients: "Purified Water, Natural Electrolytes",
         rating: "10/10 (Optimal)",
         verdict: "Essential for human cellular function and optimal hydration."
     },
     {
         name: "chips",
         type: "Food",
-        calories: "160 kcal per serving",
+        calories: "160 kcal per oz",
         sugar: "1 gram",
-        ingredients: "Potatoes, Vegetable Oil, TBHQ Preservative, Excessive Salt",
+        ingredients: "Potatoes, Vegetable Oil, TBHQ Preservative, High Sodium",
         rating: "3/10 (Unhealthy)",
-        verdict: "High in inflammatory fried oils and sodium."
+        verdict: "High in inflammatory fried oils and synthetic preservatives."
     },
     {
         name: "apple",
@@ -34,40 +34,85 @@ const database = [
         sugar: "19 grams (Natural)",
         ingredients: "Raw Apple, Dietary Fiber, Vitamin C, Polyphenols",
         rating: "9.5/10 (Superfood)",
-        verdict: "Natural fiber slows down sugar absorption, promoting digestive health."
+        verdict: "Natural pectin fiber slows sugar absorption, promoting digestive health."
+    },
+    {
+        name: "pizza",
+        type: "Food",
+        calories: "280 kcal per slice",
+        sugar: "3.5 grams",
+        ingredients: "Refined Wheat Flour, Processed Cheese, Sodium Nitrates, Saturated Oils",
+        rating: "3/10 (Unhealthy)",
+        verdict: "High glycemic refined carbs combined with heavy saturated fats."
     }
 ];
 
-const searchBtn = document.getElementById("searchBtn");
-const searchInput = document.getElementById("searchInput");
-const searchResult = document.getElementById("searchResult");
+// Helper Function to Perform Search
+function performSearch(query) {
+    const searchResult = document.getElementById("searchResult");
+    const resName = document.getElementById("resName");
+    const resCalories = document.getElementById("resCalories");
+    const resSugar = document.getElementById("resSugar");
+    const resIngredients = document.getElementById("resIngredients");
+    const resRating = document.getElementById("resRating");
+    const resVerdict = document.getElementById("resVerdict");
 
-if (searchBtn) {
-    searchBtn.addEventListener("click", function() {
-        const query = searchInput.value.trim().toLowerCase();
-        
-        // Find matching item in database
-        const match = database.find(item => item.name === query);
+    if (!query) {
+        alert("Please enter a food or drink item to inspect!");
+        return;
+    }
 
-        if (match) {
-            document.getElementById("resName").textContent = `${match.name.toUpperCase()} (${match.type})`;
-            document.getElementById("resCalories").textContent = match.calories;
-            document.getElementById("resSugar").textContent = match.sugar;
-            document.getElementById("resIngredients").textContent = match.ingredients;
-            document.getElementById("resRating").textContent = match.rating;
-            document.getElementById("resVerdict").textContent = match.verdict;
-            searchResult.style.display = "block";
-        } else if (query === "") {
-            alert("Please type a food or drink item to search!");
-        } else {
-            // General response for unlisted items using conditional logic
-            document.getElementById("resName").textContent = query.toUpperCase();
-            document.getElementById("resCalories").textContent = "Approx. 150-250 kcal";
-            document.getElementById("resSugar").textContent = "Varies based on brand";
-            document.getElementById("resIngredients").textContent = "Standard commercial processing ingredients";
-            document.getElementById("resRating").textContent = "5/10 (Moderate)";
-            document.getElementById("resVerdict").textContent = "Check packaging labels for artificial dyes and added sugars.";
-            searchResult.style.display = "block";
-        }
-    });
+    const match = database.find(item => item.name === query.toLowerCase());
+
+    if (match) {
+        resName.textContent = `${match.name.toUpperCase()} (${match.type})`;
+        resCalories.textContent = match.calories;
+        resSugar.textContent = match.sugar;
+        resIngredients.textContent = match.ingredients;
+        resRating.textContent = match.rating;
+        resVerdict.textContent = match.verdict;
+    } else {
+        // Fallback result using conditional handling for unlisted items
+        resName.textContent = `${query.toUpperCase()} (Unlisted Item)`;
+        resCalories.textContent = "Approx. 150 - 250 kcal";
+        resSugar.textContent = "Check packaging details";
+        resIngredients.textContent = "Standard processed commercial ingredients";
+        resRating.textContent = "5/10 (Moderate)";
+        resVerdict.textContent = "Always check nutrition labels for artificial dyes, additives, and added sugars.";
+    }
+
+    // Show result card
+    searchResult.classList.remove("hidden");
 }
+
+// Event Listeners setup when DOM is fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    const searchBtn = document.getElementById("searchBtn");
+    const searchInput = document.getElementById("searchInput");
+    const tagButtons = document.querySelectorAll(".tag-btn");
+
+    if (searchBtn && searchInput) {
+        // Click event on Search Button
+        searchBtn.addEventListener("click", function() {
+            performSearch(searchInput.value.trim());
+        });
+
+        // Press Enter key to search
+        searchInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                performSearch(searchInput.value.trim());
+            }
+        });
+    }
+
+    // Quick tag button clicks
+    tagButtons.forEach(btn => {
+        btn.addEventListener("click", function() {
+            const tagQuery = this.getAttribute("data-query");
+            if (searchInput) {
+                searchInput.value = tagQuery;
+            }
+            performSearch(tagQuery);
+        });
+    });
+});
