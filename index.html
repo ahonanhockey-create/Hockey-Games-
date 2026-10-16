@@ -3,78 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fantasy Hockey Hub - Dashboard</title>
+    <title>Fantasy Puck - Players & Standings</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation Menu (Required on every page) -->
+    <!-- Navigation Menu -->
     <nav class="navbar">
-        <a href="index.html" class="active">Dashboard</a>
-        <a href="teams.html">Players & Standings</a>
-        <a href="game.html">⚡ Lineup Optimizer</a>
+        <a href="index.html">Dashboard</a>
+        <a href="teams.html" class="active">Players & Standings</a>
+        <a href="schedule.html">Schedule & Record</a>
     </nav>
 
     <header>
-        <h1>🏒 Fantasy Hockey Manager Hub</h1>
-        <p>Your daily edge for setting winning lineups and tracking hot players.</p>
+        <h1>📋 Player Information & Stats</h1>
+        <p>Deep-dive into player updates, injuries, and fantasy value.</p>
     </header>
 
     <main class="container wide-container">
-        <!-- Hot Streaks Section -->
-        <section class="fantasy-section">
-            <h2>🔥 Current Hot Streaks (Must-Start)</h2>
-            <ul class="hobby-list">
-                <li><strong>Connor McDavid (EDM - C):</strong> 7 goals & 9 assists in his last 5 games. Absolute lock.</li>
-                <li><strong>Nathan MacKinnon (COL - C):</strong> Riding a 6-game point streak with 18 total shots.</li>
-                <li><strong>Connor Hellebuyck (WPG - G):</strong> Won 4 straight starts with a .945 save percentage.</li>
-            </ul>
-        </section>
-
-        <!-- Start 'Em / Sit 'Em Section -->
-        <section class="fantasy-section">
-            <h2>📋 Start 'Em / Sit 'Em Advice for Tonight</h2>
-            <table class="schedule-table">
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Position</th>
-                        <th>Recommendation</th>
-                        <th>Reasoning</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Auston Matthews</td>
-                        <td>Center</td>
-                        <td><span style="color: #00b4d8; font-weight: bold;">START 'EM</span></td>
-                        <td>Facing a backup goaltender with leaky defense.</td>
-                    </tr>
-                    <tr>
-                        <td>Igor Shesterkin</td>
-                        <td>Goalie</td>
-                        <td><span style="color: #00b4d8; font-weight: bold;">START 'EM</span></td>
-                        <td>Playing at home against a low-scoring offense.</td>
-                    </tr>
-                    <tr>
-                        <td>Miro Heiskanen</td>
-                        <td>Defense</td>
-                        <td><span style="color: #ff6b6b; font-weight: bold;">SIT 'EM</span></td>
-                        <td>Carrying a minor injury designation; limited power-play time expected.</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <!-- Interactive Feature 1 -->
-        <div style="margin-top: 25px;">
-            <button id="tipBtn">Generate Daily Expert Tip</button>
-            <p id="tipOutput" style="margin-top: 10px; font-weight: bold;"></p>
+        <h2>Player Database Search</h2>
+        
+        <!-- User Input Feature -->
+        <div class="form-group" style="margin-bottom: 20px;">
+            <input type="text" id="playerSearchInput" placeholder="Search player name (e.g., Matthews, Panarin)...">
+            <button id="searchPlayerBtn">Look Up Player</button>
         </div>
+        <p id="playerSearchOutput" style="font-weight: bold; color: #90e0ef;"></p>
+
+        <table class="schedule-table" style="margin-top: 20px;">
+            <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Position</th>
+                    <th>Team</th>
+                    <th>Status</th>
+                    <th>Proj. Fantasy Pts</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Auston Matthews</td>
+                    <td>Center</td>
+                    <td>TOR</td>
+                    <td>Active 🟢</td>
+                    <td>24.5</td>
+                </tr>
+                <tr>
+                    <td>Nathan MacKinnon</td>
+                    <td>Center</td>
+                    <td>COL</td>
+                    <td>Active 🟢</td>
+                    <td>27.0</td>
+                </tr>
+                <tr>
+                    <td>Igor Shesterkin</td>
+                    <td>Goalie</td>
+                    <td>NYR</td>
+                    <td>Confirmed 🟢</td>
+                    <td>21.0</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
 
     <footer>
-        <p>&copy; 2026 Fantasy Hockey Hub. Built with Vibe Coding.</p>
+        <p>&copy; 2026 Fantasy Puck App. Built with Vibe Coding.</p>
     </footer>
 
     <script src="script.js"></script>
