@@ -1,51 +1,62 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHL Central - Penalty Shootout Game</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// =========================================================
+// Feature 1: Hot Streak Waiver Wire Advisor (index.html)
+// =========================================================
+const streakBtn = document.getElementById("streakBtn");
+const hotStreakStatus = document.getElementById("hotStreakStatus");
 
-    <!-- Navigation Menu -->
-    <nav class="navbar">
-        <a href="index.html">Schedule & Scores</a>
-        <a href="teams.html">Standings</a>
-        <a href="game.html" class="active">🏒 Penalty Shootout Game</a>
-    </nav>
+const waiverPicks = [
+    "🔥 Sam Reinhart (F) - On fire with goals in consecutive games! High power-play usage.",
+    "🔥 Seth Jarvis (F) - Logging big minutes and racking up assists.",
+    "🔥 Lukas Dostal (G) - Stealing starts and putting up high save percentage numbers."
+];
 
-    <header>
-        <h1>Interactive Penalty Shootout 🥅</h1>
-        <p>Take a shot against the AI goaltender! Can you score?</p>
-    </header>
+if (streakBtn) {
+    streakBtn.addEventListener("click", function() {
+        const randomIndex = Math.floor(Math.random() * waiverPicks.length);
+        hotStreakStatus.textContent = waiverPicks[randomIndex];
+        hotStreakStatus.style.color = "#90e0ef";
+        hotStreakStatus.style.fontWeight = "bold";
+    });
+}
 
-    <main class="container">
-        <div class="scoreboard">
-            <p>Score: <span id="goalScore">0</span> / <span id="totalShots">0</span></p>
-        </div>
+// =========================================================
+// Feature 2: Player Database Search & Info Lookup (teams.html)
+// =========================================================
+const searchPlayerBtn = document.getElementById("searchPlayerBtn");
+const playerSearchInput = document.getElementById("playerSearchInput");
+const playerSearchOutput = document.getElementById("playerSearchOutput");
 
-        <div id="rink-view" style="font-size: 50px; margin: 20px;">
-            🏒 🥅
-        </div>
+if (searchPlayerBtn) {
+    searchPlayerBtn.addEventListener("click", function() {
+        const query = playerSearchInput.value.trim();
 
-        <p id="gameMessage" style="font-size: 18px; font-weight: bold; min-height: 30px;">Choose where to shoot!</p>
+        if (query === "") {
+            playerSearchOutput.textContent = "Please type a player name to search.";
+            playerSearchOutput.style.color = "#ff6b6b";
+        } else {
+            playerSearchOutput.textContent = `✅ Player Profile Found for "${query}": Active Tier-1 Starter | High projected fantasy point ceiling this week!`;
+            playerSearchOutput.style.color = "#00b4d8";
+        }
+    });
+}
 
-        <div class="game-controls">
-            <button class="shot-btn" data-spot="left">Shoot Left ⬅️</button>
-            <button class="shot-btn" data-spot="center">Shoot Center ⬆️</button>
-            <button class="shot-btn" data-spot="right">Shoot Right ➡️</button>
-        </div>
+// =========================================================
+// Feature 3: Matchup Win Simulator & Record Counter (schedule.html)
+// =========================================================
+const simulateWinBtn = document.getElementById("simulateWinBtn");
+const winsCount = document.getElementById("winsCount");
+let currentWins = 14;
 
-        <div style="margin-top: 20px;">
-            <button id="resetGameBtn" style="background-color: #ff6b6b;">Reset Game</button>
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 NHL Score Central. Built with Vibe Coding.</p>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+if (simulateWinBtn) {
+    simulateWinBtn.addEventListener("click", function() {
+        currentWins++;
+        winsCount.textContent = currentWins;
+        simulateWinBtn.textContent = "Win Recorded! 🎉";
+        simulateWinBtn.style.backgroundColor = "#28a745";
+        
+        setTimeout(() => {
+            simulateWinBtn.textContent = "Simulate Next Win! 🎉";
+            simulateWinBtn.style.backgroundColor = "#00b4d8";
+        }, 1500);
+    });
+}
