@@ -1,134 +1,131 @@
-/* Overall Page Theme */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0d1b2a;
-    color: #e0fbfc;
+    background-color: #12181b;
+    color: #f0f4f8;
     text-align: center;
 }
 
 /* Navigation Bar */
 .navbar {
-    background-color: #1b263b;
+    background-color: #1b242a;
     padding: 15px;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+    flex-wrap: wrap;
 }
 
 .navbar a {
-    color: #778da9;
+    color: #9fb3c8;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
-    padding: 5px 12px;
+    padding: 8px 12px;
     border-radius: 4px;
     transition: 0.3s;
 }
 
 .navbar a:hover, .navbar a.active {
     color: #ffffff;
-    background-color: #00b4d8;
+    background-color: #00d26a;
 }
 
-/* Header & Containers */
+/* Containers */
 header {
     padding: 30px 20px;
 }
 
 .container {
-    background: #1b263b;
+    background: #1b242a;
     max-width: 650px;
     margin: 20px auto;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    border: 1px solid #415a77;
+    border: 1px solid #2c3a47;
 }
 
 .wide-container {
-    max-width: 850px;
+    max-width: 900px;
 }
 
-.fantasy-section {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-/* Tables */
-.schedule-table {
+/* Data Tables */
+.data-table {
     width: 100%;
     border-collapse: collapse;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-.schedule-table th, .schedule-table td {
+.data-table th, .data-table td {
     padding: 12px;
-    border-bottom: 1px solid #415a77;
+    border-bottom: 1px solid #2c3a47;
 }
 
-.schedule-table th {
-    background-color: #0d1b2a;
-    color: #00b4d8;
+.data-table th {
+    background-color: #12181b;
+    color: #00d26a;
 }
 
-.schedule-table tr:hover {
-    background-color: #24344d;
-}
-
-/* Lists */
-.hobby-list {
-    list-style-type: none;
+/* Ratings & Badges */
+.rating-list {
+    list-style: none;
     padding: 0;
-    font-size: 17px;
-    margin: 15px 0;
-}
-
-.hobby-list li {
-    padding: 10px 0;
-    border-bottom: 1px dashed #415a77;
     text-align: left;
 }
 
-/* Form Inputs & Buttons */
+.rating-list li {
+    padding: 15px;
+    border-bottom: 1px solid #2c3a47;
+}
+
+.grade-green { color: #00d26a; font-weight: bold; }
+.grade-yellow { color: #f1c40f; font-weight: bold; }
+.grade-red { color: #ff4757; font-weight: bold; }
+
+.warning { color: #ff4757; font-weight: bold; }
+.caution { color: #f1c40f; font-weight: bold; }
+
+/* Search Box & Inputs */
 input, button {
-    padding: 10px;
+    padding: 12px;
     font-size: 16px;
     margin: 8px;
     border-radius: 5px;
-    border: 1px solid #415a77;
+    border: 1px solid #2c3a47;
 }
 
 input {
-    background-color: #0d1b2a;
+    background-color: #12181b;
     color: white;
-    width: 55%;
+    width: 60%;
 }
 
 button {
-    background-color: #00b4d8;
-    color: #0d1b2a;
+    background-color: #00d26a;
+    color: #12181b;
     cursor: pointer;
     font-weight: bold;
-    transition: 0.2s;
 }
 
 button:hover {
-    background-color: #90e0ef;
+    background-color: #2ed573;
 }
 
-.scoreboard {
-    font-size: 20px;
-    font-weight: bold;
-    color: #90e0ef;
+.result-card {
+    background: #12181b;
+    padding: 20px;
+    border-radius: 6px;
+    text-align: left;
+    border: 1px solid #00d26a;
 }
 
 footer {
     margin-top: 50px;
     padding: 20px;
-    color: #778da9;
+    color: #627d98;
     font-size: 14px;
 }
