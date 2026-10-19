@@ -3,45 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NutriTrack - Search Engine</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Nutrition & Health Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .quiz-card {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #38bdf8;
+            text-align: center;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            background-color: #334155;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        label:hover {
+            background-color: #475569;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        button {
+            width: 100%;
+            background-color: #0284c7;
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0369a1;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .success {
+            background-color: #065f46;
+            color: #34d399;
+        }
+
+        .warning {
+            background-color: #854d0e;
+            color: #fde047;
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="navbar">
-        <div class="nav-brand">NutriTrack</div>
-        <div class="nav-links">
-            <a href="index.html">Drink Info</a>
-            <a href="drink-ratings.html">Drink Ratings</a>
-            <a href="foods.html">Food Info</a>
-            <a href="food-ratings.html">Food Ratings</a>
-            <a href="search.html" class="active">Search Tool</a>
-        </div>
-    </nav>
+    <div class="quiz-card">
+        <h1>Nutrition & Health Quiz</h1>
+        
+        <form id="quiz-form">
+            <!-- Question 1 -->
+            <div class="question">
+                <p>1. Which type of fat found in partially hydrogenated oils is considered the least healthy for heart health?</p>
+                <label><input type="radio" name="q1" value="wrong1"> Monounsaturated Fat</label>
+                <label><input type="radio" name="q1" value="correct"> Trans Fat</label>
+                <label><input type="radio" name="q1" value="wrong2"> Omega-3 Fatty Acid</label>
+            </div>
 
-    <header class="hero">
-        <h1>🔍 Food & Drink Lookup Engine</h1>
-        <p>Search any item to inspect calories, sugar content, additives, and health rating!</p>
-    </header>
+            <!-- Question 2 -->
+            <div class="question">
+                <p>2. High consumption of which drink ingredient is strongly linked to tooth decay and diabetes?</p>
+                <label><input type="radio" name="q2" value="wrong1"> Sparkling Water</label>
+                <label><input type="radio" name="q2" value="wrong2"> Electrolytes</label>
+                <label><input type="radio" name="q2" value="correct"> High-Fructose Corn Syrup / Added Sugars</label>
+            </div>
 
-    <main class="container">
-        <div class="card">
-            <h2>Search Database</h2>
-            <form id="search-form">
-                <input type="text" id="search-input" placeholder="Type a food or drink name..." required>
-                <button type="submit">Search</button>
-            </form>
-        </div>
+            <!-- Question 3 -->
+            <div class="question">
+                <p>3. Which category of food usually contains high amounts of sodium, artificial additives, and refined carbs?</p>
+                <label><input type="radio" name="q3" value="correct"> Ultra-Processed Foods</label>
+                <label><input type="radio" name="q3" value="wrong1"> Fresh Produce</label>
+                <label><input type="radio" name="q3" value="wrong2"> Whole Grains</label>
+            </div>
 
-        <div id="results" class="results-container">
-            <!-- Search results will render here dynamically -->
-        </div>
-    </main>
+            <button type="button" onclick="calculateScore()">Submit Quiz</button>
+        </form>
 
-    <script src="script.js"></script>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateScore() {
+            let score = 0;
+            const totalQuestions = 3;
+
+            // Check answers
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+            const q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (!q1 || !q2 || !q3) {
+                alert("Please answer all questions before submitting!");
+                return;
+            }
+
+            if (q1.value === "correct") score++;
+            if (q2.value === "correct") score++;
+            if (q3.value === "correct") score++;
+
+            // Display result
+            const resultDiv = document.getElementById("result");
+            resultDiv.style.display = "block";
+            
+            if (score === totalQuestions) {
+                resultDiv.className = "success";
+                resultDiv.innerHTML = `Great job! Score: ${score} / ${totalQuestions} (100%)`;
+            } else {
+                resultDiv.className = "warning";
+                resultDiv.innerHTML = `You scored: ${score} / ${totalQuestions}. Keep learning!`;
+            }
+        }
+    </script>
+
 </body>
 </html>
-
