@@ -29,52 +29,19 @@
 
     <main class="container">
         <div class="card">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Try 'soda', 'apple', 'chips', 'water', or 'pizza'...">
-                <button id="searchBtn">Inspect Item</button>
-            </div>
+            <h2>Search Database</h2>
+            <form id="search-form">
+                <input type="text" id="search-input" placeholder="Type a food or drink name..." required>
+                <button type="submit">Search</button>
+            </form>
+        </div>
 
-            <!-- Quick Suggestions -->
-            <div class="quick-tags">
-                <span>Quick Search:</span>
-                <button class="tag-btn" data-query="soda">Soda</button>
-                <button class="tag-btn" data-query="apple">Apple</button>
-                <button class="tag-btn" data-query="chips">Chips</button>
-                <button class="tag-btn" data-query="water">Water</button>
-            </div>
-
-            <div id="searchResult" class="result-card hidden">
-                <h2 id="resName"></h2>
-                <div class="res-grid">
-                    <div class="res-item">
-                        <span class="res-label">Calories:</span>
-                        <span id="resCalories" class="res-val"></span>
-                    </div>
-                    <div class="res-item">
-                        <span class="res-label">Sugar Content:</span>
-                        <span id="resSugar" class="res-val"></span>
-                    </div>
-                    <div class="res-item">
-                        <span class="res-label">Health Rating:</span>
-                        <span id="resRating" class="res-val highlight"></span>
-                    </div>
-                </div>
-                <div class="res-full">
-                    <span class="res-label">Key Ingredients:</span>
-                    <p id="resIngredients"></p>
-                </div>
-                <div class="res-full">
-                    <span class="res-label">Verdict / Warning:</span>
-                    <p id="resVerdict"></p>
-                </div>
-            </div>
+        <div id="results" class="results-container">
+            <!-- Search results will render here dynamically -->
         </div>
     </main>
-
-    <footer>
-        <p>&copy; 2026 NutriTrack Food & Drink Intelligence. Built with Vibe Coding.</p>
-    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
